@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  min-width: 0; /* Prevents the host element from inflating the parent layout */
+}
+
+.split-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.split_pane_left {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Stops the left pane from shrinking when the layout gets small */
+}
+
+.split_pane_right {
+  flex-grow: 1;
+  flex-shrink: 1; /* Explicitly tell the right pane it MUST shrink if forced */
+  min-width: 0;   /* CRUCIAL: Overrides 'min-width: auto' so it doesn't push the outer bar */
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.split_vertical_bar {
+  display: block !important;
+  height: 100% !important;
+  width: 8px !important;       
+  min-width: 8px !important;   
+  max-width: 8px !important;
+  cursor: col-resize;
+  background-color: #444444;   
+  box-sizing: border-box;
+  z-index: 10;
+  flex-shrink: 0; /* Ensures the bar never flattens */
+}

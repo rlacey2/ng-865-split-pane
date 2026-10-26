@@ -1,0 +1,16 @@
+<div #splitWrapper class="split-wrapper">
+  
+  <!-- Left Side Container -->
+  <div #leftPane class="split_pane_left">
+    <ng-container *ngTemplateOutlet="leftTemplate"></ng-container>
+  </div>
+
+  <!-- Draggable Divider Bar -->
+  <div #verticalBar class="split_vertical_bar"></div>
+
+  <!-- Right Side Container -->
+  <div class="split_pane_right">
+    <ng-container *ngTemplateOutlet="rightTemplate"></ng-container>
+  </div>
+
+</div>

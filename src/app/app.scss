@@ -1,0 +1,25 @@
+// Variables
+$black: #3C3530;
+$green: #AACD6E;
+$gray: #C5C6B6;
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+ 
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+ 

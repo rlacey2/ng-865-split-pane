@@ -1,0 +1,91 @@
+<div style="height: 100vh; width: 100vw;">
+
+    @if(1) {
+
+    <div style="height: 25vh; width: 100vw;" class="pt-2">
+        <div class="ps-2">2 columns *ngTemplateOutlet</div>
+
+        <app-split-pane initialWidth="30%"
+         storageKey="twoColumns01"
+        [leftTemplate]="outerLeftof2"
+            [rightTemplate]="outerRightof2"></app-split-pane>
+    </div>
+    }
+
+
+    @if(1) {
+
+
+    <!-- Outer Split-Pane Setup -->
+    <div style="height: 25vh; width: 100vw;" class="pt-4">
+        <div class="ps-2">3 columns using a nested split in the right pane. Using *ngTemplateOutlet</div>
+
+        <app-split-pane initialWidth="60%"
+          storageKey="threeColumns01"
+         [leftTemplate]="outerLeft" [rightTemplate]="outerRight"></app-split-pane>
+    </div>
+    }
+
+
+    @if(1) {
+    <div style="height: 25vh; width: 100vw;" class="pt-4">
+        <div class="ps-2">3 columns using a nested split in the right pane. Using *ngTemplateOutlet</div>
+
+
+        <!-- Outer Split-Pane Setup -->
+        <app-split-pane
+         storageKey="threeColumns02"
+         [leftTemplate]="outerLeft" [rightTemplate]="outerRight"></app-split-pane>
+    </div>
+    }
+
+</div>
+
+<!-- belows is the structure for 2 using default structure -->
+
+<!-- A. Outer Left Template Definition -->
+<ng-template #outerLeftof2>
+    <div class="bg-warning px-2 h-100">
+        <h3>A) Outer Left Panel</h3>
+    </div>
+</ng-template>
+
+<!-- B. Outer Left Template Definition -->
+<ng-template #outerRightof2>
+    <div class="bg-primary px-2 h-100">
+        <h3>B) Outer Right Panel</h3>
+    </div>
+</ng-template>
+
+
+
+<!-- belows is the structure for 3 using nested child -->
+
+<!-- 1. Outer Left Template Definition -->
+<ng-template #outerLeft>
+    <div class="bg-primary px-2 h-100">
+        <h3>Outer Left Panel</h3>
+    </div>
+</ng-template>
+
+<!-- 2. Outer Right Template Definition (Contains Nested Split) -->
+<ng-template #outerRight>
+
+    <!-- Inner Isolated Split-Pane -->
+    <app-split-pane [leftTemplate]="innerLeft" [rightTemplate]="innerRight"></app-split-pane>
+
+</ng-template>
+
+<!-- 3. Inner Left Template Definition -->
+<ng-template #innerLeft>
+    <div class="bg-danger px-2 h-100">
+        <h3>Inner Left Panel</h3>
+    </div>
+</ng-template>
+
+<!-- 4. Inner Right Template Definition -->
+<ng-template #innerRight>
+    <div class="bg-success px-2 h-100">
+        <h3>Inner Right Panel</h3>
+    </div>
+</ng-template>
